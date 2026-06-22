@@ -1,0 +1,4 @@
+import { Gift, LockKeyhole, Medal, Trophy } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import "./Prizes.css";
+export default function Prizes(){const{t}=useLanguage();const icons=[Trophy,Medal,Medal];return <div className="prizes-page page-section"><div className="page-container"><span className="eyebrow">{t.prizes.eyebrow}</span><h1 className="page-title">{t.prizes.title}</h1><p className="page-subtitle">{t.prizes.description}</p><div className="prize-grid">{t.prizes.cards.map((card,i)=>{const Icon=icons[i];return <article className={`prize-card prize-${i+1}`} key={card.place}><Icon/><span>{card.place}</span><h2>{card.title}</h2><p>{card.text}</p></article>})}</div><article className="prize-privacy glass-card"><LockKeyhole/><div><h2>{t.prizes.privacyTitle}</h2><p>{t.prizes.privacyText}</p></div></article><div className="prize-mystery"><Gift/><span>?</span></div></div></div>}
